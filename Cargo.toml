@@ -1,0 +1,9 @@
+[package]
+name = "mk64f12-hal"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cortex-m = "0.7.6"
+cortex-m-rt = "0.7.1"
+vcell = "0.1.3"
