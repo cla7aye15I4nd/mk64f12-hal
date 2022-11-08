@@ -244,6 +244,8 @@ pub enum RANGE_A {
     _00 = 0,
     #[doc = "1: Encoding 1 - High frequency range selected for the crystal oscillator ."]
     _01 = 1,
+    #[doc = "2: Encoding 2 - Very high frequency range selected for the crystal oscillator ."]
+    _10 = 2,
 }
 impl From<RANGE_A> for u8 {
     #[inline(always)]
@@ -284,6 +286,11 @@ impl<'a, const O: u8> RANGE_W<'a, O> {
     #[inline(always)]
     pub fn _01(self) -> &'a mut W {
         self.variant(RANGE_A::_01)
+    }
+    #[doc = "Encoding 2 - Very high frequency range selected for the crystal oscillator ."]
+    #[inline(always)]
+    pub fn _10(self) -> &'a mut W {
+        self.variant(RANGE_A::_10)
     }
 }
 #[doc = "Field `FCFTRIM` reader - Fast Internal Reference Clock Fine Trim"]
