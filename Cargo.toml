@@ -16,5 +16,5 @@ default = ["rt"]
 rt = ["cortex-m-rt/device", "critical-section"]
 
 [[example]]
-name = "uart_interrupt_transfer"
+name = "blinky"
 required-features = ["rt"]
