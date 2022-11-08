@@ -5,7 +5,7 @@ edition = "2021"
 
 [dependencies]
 critical-section = { version = "1.1.1", optional = true }
-cortex-m = "0.7.6"
+cortex-m = { version="0.7.6", features = ["critical-section-single-core"]}
 cortex-m-rt = "0.7.1"
 vcell = "0.1.2"
 
@@ -16,4 +16,4 @@ rt = ["cortex-m-rt/device", "critical-section"]
 
 [[example]]
 name = "uart_interrupt_transfer"
-features = ["rt"]
+required-features = ["rt"]
