@@ -111,6 +111,10 @@ fn boot_init_clock(dp : &mut hal::Peripherals) {
 fn main() -> ! {
     let mut cp = cortex_m::Peripherals::take().unwrap();
     let mut dp = hal::Peripherals::take().unwrap();
+    
+    dp.WDOG.unlock.write(|w| unsafe { w.wdogunlock().bits(0xc520) } );
+    dp.WDOG.unlock.write(|w| unsafe { w.wdogunlock().bits(0xd928) } );
+    dp.WDOG.stctrlh.write(|w| unsafe { w.bits(0x1d2) });
 
     boot_init_pins(&mut dp);
     boot_init_clock(&mut dp);
